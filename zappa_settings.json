@@ -1,0 +1,24 @@
+{
+    "devops": {
+	"project_name": "lambda_metrics",
+	"keep_warm": false,
+	"aws_region": "eu-west-1",
+        "s3_bucket": "tptest-zappa",
+	"events": [{
+		"function": "lambdametrics.send_random",
+		"expression": "rate(1 minute)"
+	}],
+	"debug": true,
+	"log_level": "DEBUG",
+        "app_function": "app.lambda_handler",
+	"use_apigateway": false,
+	"http_methods": ["GET"],
+	"role_name": "LambdaMetricsRole",
+	"attach_policy": "LambdaMetricsPolicy.json",
+	"parameter_depth": 1,
+	"timeout_seconds": 300,
+	"memory_size": 128,
+	"delete_s3_zip": false,
+	"use_precompiled_packages": true
+    }
+}

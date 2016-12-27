@@ -1,0 +1,15 @@
+from CloudWatchUtil import CustomMetricSender
+import numpy as np
+import random
+
+def send_random():
+    random.seed()
+    #a1 = random.randint(0,5)
+    #a2 = random.randint(0,5)
+    #a3 = random.randint(0,5)
+    data = np.random.randn(5)
+    sender = CustomMetricSender('ExperimentalCustom', 'TpltestTimings')
+    res = sender.senddata(data)
+    print data
+
+
