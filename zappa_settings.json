@@ -9,7 +9,7 @@
 		"expression": "rate(1 minute)"
 	}],
 	"debug": true,
-	"log_level": "DEBUG",
+	"log_level": "INFO",
         "app_function": "app.lambda_handler",
 	"use_apigateway": false,
 	"http_methods": ["GET"],

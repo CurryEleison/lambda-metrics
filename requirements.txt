@@ -2,5 +2,4 @@ zappa
 boto3
 pandas
 numpy
-Flask
 -e git://github.com/CurryEleison/AwsElbLogUtil.git#egg=AwsElbLogUtil

@@ -1,6 +1,10 @@
 from CloudWatchUtil import CustomMetricSender
 import numpy as np
 import random
+import logging
+
+logger = logging.getLogger(__name__)
+logger.setLevel(logging.INFO)
 
 def send_random():
     random.seed()
@@ -10,6 +14,6 @@ def send_random():
     data = np.random.randn(5)
     sender = CustomMetricSender('ExperimentalCustom', 'TpltestTimings')
     res = sender.senddata(data)
-    print data
+    logging.info(data)
 
 

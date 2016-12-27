@@ -1,13 +1,11 @@
 import logging
-from flask import Flask
 
-app = Flask(__name__)
 logging.basicConfig()
 logger = logging.getLogger(__name__)
-logger.setLevel(logging.DEBUG)
+logger.setLevel(logging.INFO)
 
 
-@app.route('/', methods = ['GET', 'POST'])
+# @app.route('/', methods = ['GET', 'POST'])
 def lambda_handler(event=None, context=None):
     logger.info('Lambda function invoked index()')
 
