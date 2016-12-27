@@ -1,5 +1,4 @@
 zappa
 boto3
-pandas
 numpy
 -e git://github.com/CurryEleison/AwsElbLogUtil.git#egg=AwsElbLogUtil
