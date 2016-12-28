@@ -19,7 +19,7 @@
 	"use_apigateway": false,
 	"http_methods": ["GET"],
 	"role_name": "LambdaMetricsRole",
-	"attach_policy": "LambdaMetricsPolicy.json",
+	"manage_roles": false,
 	"parameter_depth": 1,
 	"timeout_seconds": 300,
 	"memory_size": 128,
