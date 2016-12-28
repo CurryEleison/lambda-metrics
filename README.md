@@ -41,5 +41,4 @@ python -c "import lambdametrics; lambdametrics.send_random()"
 - Consider making the logfilter configurable with e.g. environment variables.
 	Overall should probably consider configuration more carefully
 - Add some exception handling. Esp if there is a useful way to notify datadog
-- 
 
