@@ -12,19 +12,22 @@ class CustomMetricSender:
         self.metricname = metricname
         self.region = region
 
-    def senddata(self, datalist, timestamp=None):
+    def senddatalist(self, datalist, timestamp=None):
         utc = UTC()
         datatime = timestamp if timestamp != None else datetime.now(utc)
         datasum = sum(datalist)
         datamax = max(datalist)
         datamin = min(datalist)
         datalength = len(datalist)
+        return self.senddataaggregate(datatime, datalength, datasum, datamin, datamax)
+
+    def senddataaggregate(self, datatime, datalength, datasum, datamin, datamax):
         metricdata = [
                         {
                         'MetricName': self.metricname,
                         'Timestamp': datatime,
                         'StatisticValues': {
-                            'SampleCount': datalength, 
+                            'SampleCount': int(datalength), 
                             'Sum': datasum, 
                             'Minimum': datamin,
                             'Maximum': datamax

@@ -1,12 +1,17 @@
 {
     "devops": {
-	"project_name": "lambda_metrics",
+	"project_name": "s3_trigger",
 	"keep_warm": false,
 	"aws_region": "eu-west-1",
         "s3_bucket": "tptest-zappa",
 	"events": [{
-		"function": "lambdametrics.send_random",
-		"expression": "rate(1 minute)"
+		"function": "s3trigger.send_metrics_tpltest",
+		"event_source": {
+			"arn": "arn:aws:s3:::tptest-123logging",
+			"events": [
+				"s3:ObjectCreated:*"
+			]
+		}
 	}],
 	"debug": true,
 	"log_level": "INFO",
@@ -18,7 +23,7 @@
 	"parameter_depth": 1,
 	"timeout_seconds": 300,
 	"memory_size": 128,
-	"delete_s3_zip": false,
+	"delete_s3_zip": true,
 	"use_precompiled_packages": true
     }
 }
