@@ -9,18 +9,20 @@ Start by setting up your virtual environment as venv. Use myvirtualenvsetup.sh t
 You can install the required packages with the command(s) in pipinstall.sh .
 
 Assuming you have a working Role you can deploy the lambda with
-zappa deploy devops
+`zappa deploy devops`
 
 and update changes with
-zappa update devops
+`zappa update devops`
 
 and get rid of it with
-zappa undeploy devops
+`zappa undeploy devops`
 
 You can follow the action with
-zappa tail devops
+`zappa tail devops`
 
 The Flask and app.py are there purely for cargo cult reasons. We don't ever invoke that.
 
 You can invoke the function from the command line (in the command line context) with e.g.
+```
 python -c "import lambdametrics; lambdametrics.send_random()"
+```
