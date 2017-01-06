@@ -31,6 +31,7 @@ python -c "import lambdametrics; lambdametrics.send_random()"
 ## TODO
 
 - Reduce logging (a lot)
+- Improve handling of cases where load balancer could not get a reply from a real server
 - Add "lambda_description" and "project_name" to zappa configuration
 - Add some file exclusions to zappa configuration
 - Clean out the app.py dummy file
@@ -41,4 +42,4 @@ python -c "import lambdametrics; lambdametrics.send_random()"
 - Consider making the logfilter configurable with e.g. environment variables.
 	Overall should probably consider configuration more carefully
 - Add some exception handling. Esp if there is a useful way to notify datadog
-
+- I'm keeping the pandas and numpy dependencies around for now despite everything
